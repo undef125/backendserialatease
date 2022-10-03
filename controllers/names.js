@@ -2,6 +2,7 @@ const getName = require("../scrappers/getnames");
 const getVideoLink = require("../scrappers/serialLink");
 
 const getNames = async (req, res) => {
+  console.log('hehe')
   try {
     const channelName = req.params.channelname;
     const value = await getName(channelName);

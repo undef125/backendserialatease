@@ -17,4 +17,8 @@ app.use(express.json());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get("/", cors(), (req,res) => {
+    res.send("Welcome Buddy!!");
+})
+
 app.listen(process.env.PORT || 5000)
