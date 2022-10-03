@@ -16,4 +16,4 @@ app.use(express.json());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.listen(5000)
+app.listen(process.env.PORT || 5000)
