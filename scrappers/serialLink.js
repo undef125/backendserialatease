@@ -1,13 +1,11 @@
 const puppeteer = require("puppeteer");
 const puppeteercore = require("puppeteer-core");
-const dotenv = require('dotenv');
-dotenv.config({ path: './.env'})
 
 const getVideoLink = async (channelName, serialName) => {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
-  await page.goto(`${process.env.SITEBASE_URI}/Channels/${channelName}`);
+  await page.goto(`https://apnetv.to/Channels/${channelName}`);
   await page.click(`a[title="${serialName}"]`);
 
   await page.waitForSelector(".time-date");

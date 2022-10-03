@@ -1,6 +1,4 @@
 const puppeteer = require("puppeteer");
-const dotenv = require('dotenv');
-dotenv.config({ path: './.env'})
 let names = [];
 
 const getName = async (channelName) => {
@@ -11,7 +9,7 @@ const getName = async (channelName) => {
 
   await page.setViewport({ width: 1920, height: 1080 });
 
-  await page.goto(`${process.env.SITEBASE_URI}/Channels/${channelName}`);
+  await page.goto(`https://apnetv.to/Channels/${channelName}`);
 
   await page.waitForSelector(".link-list");
 
