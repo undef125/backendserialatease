@@ -16,7 +16,7 @@ app.use("/",cors(corsOpts),router);
 app.use(express.json());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-
+console.log("welcome!!")
 app.get("/", cors(), (req,res) => {
     res.send("Welcome Buddy!!");
 })
