@@ -1,9 +1,10 @@
 const puppeteer = require("puppeteer");
 const dotenv = require('dotenv');
-dotenv.config({ path: '../.env'})
+dotenv.config({ path: './.env'})
 let names = [];
 
 const getName = async (channelName) => {
+  console.log(process.env.SITEBASE_URI);
   const browser = await puppeteer.launch({ headless: true });
 
   const page = await browser.newPage();

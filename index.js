@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 //Middlewares
 const corsOpts = {
     origin: 'https://serialatease.netlify.app/',
+    // origin: 'http://localhost:3000/',
     methods: ['GET', 'POST'],
     origin: true,
     credentials: true,
