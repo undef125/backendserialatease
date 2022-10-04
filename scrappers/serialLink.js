@@ -40,10 +40,7 @@ const getVideoLink = async (channelName, serialName) => {
 
   await browser.close();
 
-  const browser1 = await puppeteer.launch({
-    // executablePath:
-    //   "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
-    // headless: true,
+  const browser1 = await puppeteer.launch({ 
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',

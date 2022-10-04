@@ -6,7 +6,7 @@ let parserMiddle = bodyParser.urlencoded({ extended: true });
 
 const { getNames, getLink } = require("../controllers/names");
 
-router.get("/getnames/:channelname",cors(), getNames);
-router.post("/getvideolink", [cors(), parserMiddle, express.json()], getLink);
+router.get("/getnames/:channelname", getNames);
+router.post("/getvideolink", [parserMiddle, express.json()], getLink);
 
 module.exports = router;
