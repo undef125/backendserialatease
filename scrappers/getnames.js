@@ -2,6 +2,8 @@ const puppeteer = require("puppeteer");
 let names = [];
 
 const getName = async (channelName) => {
+  console.log("function call bhayoooo");
+
   const browser = await puppeteer.launch({ headless: true });
 
   const page = await browser.newPage();
@@ -27,7 +29,6 @@ const getName = async (channelName) => {
     }
     names.length = spliceindex;
     await browser.close();
-    console.log("names: ", names)
     return names;
 };
 
