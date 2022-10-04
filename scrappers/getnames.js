@@ -2,10 +2,9 @@ const puppeteer = require("puppeteer");
 let names = [];
 
 const getName = async (channelName) => {
-  console.log("function call bhayoooo");
-
+  
   const browser = await puppeteer.launch({ headless: true });
-
+  
   const page = await browser.newPage();
 
   await page.setViewport({ width: 1920, height: 1080 });
@@ -13,11 +12,12 @@ const getName = async (channelName) => {
   await page.goto(`https://apnetv.to/Channels/${channelName}`);
 
   await page.waitForSelector(".link-list");
-
+  
   const serialName = await page.evaluate(() =>
-    Array.from(document.querySelectorAll(".link-list li"), (a) => a.textContent)
+  Array.from(document.querySelectorAll(".link-list li"), (a) => a.textContent)
   );
   
+  console.log("function call bhayoooo" , serialName);
     names = serialName.map((serial) => serial.split("\n")[1].trim());
   let spliceindex = 0;
 
