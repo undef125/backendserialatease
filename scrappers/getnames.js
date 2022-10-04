@@ -22,7 +22,6 @@ const getName = async (channelName) => {
   Array.from(document.querySelectorAll(".link-list li"), (a) => a.textContent)
   );
   
-  console.log("function call bhayoooo" , serialName);
     names = serialName.map((serial) => serial.split("\n")[1].trim());
   let spliceindex = 0;
 
