@@ -2,7 +2,12 @@ const puppeteer = require("puppeteer");
 const puppeteercore = require("puppeteer-core");
 
 const getVideoLink = async (channelName, serialName) => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+    ],
+  });
   const page = await browser.newPage();
 
   await page.goto(`https://apnetv.to/Channels/${channelName}`);
@@ -39,7 +44,10 @@ const getVideoLink = async (channelName, serialName) => {
     executablePath:
       "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
     headless: true,
-    args: ["--start-maximized"],
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+    ],
   });
   const page1 = await browser1.newPage();
   await page1.goto(go[0]);
